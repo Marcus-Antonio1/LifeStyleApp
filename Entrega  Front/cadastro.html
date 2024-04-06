@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    
+
+    <style>
+        * {
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            background-color: #2B0246;
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .logo-imagem {
+            width: 50px;
+            height: 50px;
+            background-color: #FEBA3F;
+            border-radius: 25px;
+        }
+
+        .container-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li a{
+            color: #FEBA3F;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+        .logo-texto li a{
+            color: #FEBA3F;
+            text-align: center;
+            text-decoration: none;
+        }
+        .logo-texto{
+            color: #FEBA3F;
+            margin-left: 20px;
+        }
+        .fundo {
+            background-image: linear-gradient(45deg, rgb(113, 101, 122), rgb(128, 31, 167));
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgb(241, 238, 231);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 15px;
+            background: rgba(43, 2, 70, 0.3);
+        }
+
+        button[type="submit"] {
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            background-color: #4f0879;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #6410a5;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <div class="logo-imagem"></div>
+            <div class="logo-texto">
+                <ul>
+                    <li>
+                        <a href="página-inicial.html"><h3>___</h3></a>
+                    </li>
+                    <li>
+                        <a href="página-inicial.html"><h3>___</h3></a>
+                    </li>
+                    <li>
+                        <a href="página-inicial.html"><h3>___</h3></a>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="login.html">Entrar </a> <a href="cadastro.html">| Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </header>
+    <div class="fundo">
+        <h1><b>BEM VINDO A PÁGINA DE CADASTRO DO LIFESTYLE APP</b></h1>
+        <br>
+        <br>
+        <div class="container">
+            <h2>Cadastro</h2>
+            <form>
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name">
+          
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+          
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password">
+          
+                <input type="submit" value="Enviar" onclick="salvarDados()">
+              </form>
+        </div>
+    </div>
+    <script>
+        function salvarDados() {
+          //Obtém os valores inseridos nos campos de nome, email e senha usando:
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let password = document.getElementById("password").value;
+          //Verifica se há algum dado armazenado no localStorage com a chave "dados". Caso não haja, cria um array vazio.
+          let dados = JSON.parse(localStorage.getItem("dados")) || [];
+          //Adiciona um novo objeto contendo as informações do usuário ao array.
+          dados.push({name: name, email: email, password: password});
+          //Atualiza o localStorage com o novo array convertido em uma string JSON usando 
+          localStorage.setItem("dados", JSON.stringify(dados));
+  
+          alert("Dados salvos com sucesso!");
+        }
+      </script>
+    
+    <ul id="lista-dados"></ul>
+    
+    <script>let dados = JSON.parse(localStorage.getItem("dados")) || [];
+    //Primeiro, ele obtém os dados armazenados no localStorage da mesma forma que na função salvarDados(), convertendo-os em um array vazio caso não haja dados.
+    //Em seguida, obtém a referência do elemento ul com o id "lista-dados" usando:
+    let listaDados = document.getElementById("lista-dados");
+    //Utilizando um loop for, itera sobre os dados obtidos.    
+    for (let i = 0; i < dados.length; i++) {
+        //Para cada objeto de dado, cria um novo elemento li usando 
+        let item = document.createElement("li");
+        //Define o conteúdo de texto do elemento li com as informações do usuário.
+        item.textContent = "Nome: " + dados[i].name + ", Email: " + dados[i].email + ", Senha: " + dados[i].password;
+        //Adiciona o elemento li à lista usando appendChild
+        listaDados.appendChild(item);
+        /*é responsável por adicionar o elemento li à lista representada pelo elemento com o id "lista-dados".
+         O método appendChild() é utilizado para adicionar a variável filho(item) a uma variavel pai existente(listaDados).*/  
+    }
+     </script>
+
+
+
+</body>
+
+</html>

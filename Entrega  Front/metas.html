@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metas</title>
+    <style>
+        body {
+            background-image: url(organização.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+
+
+        }
+
+        * {
+            padding: 0%;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            background-color: #2B0246;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-imagem {
+            width: 50px;
+            height: 50px;
+            background-color: #FEBA3F;
+            border-radius: 25px;
+        }
+
+        .container-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li a {
+            color: #FEBA3F;
+            text-align: center;
+            text-decoration: none;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
+
+        .logo-texto li a {
+            color: #FEBA3F;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .logo-texto {
+            color: #FEBA3F;
+            margin-left: 20px;
+        }
+
+        button[type="submit"],
+        button[type="button"] {
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+            background-color: #FEBA3F;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #f5b030;
+        }
+
+        button[type="button"]:hover {
+            background-color: #6410a5;
+        }
+
+        .fundo {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .box {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+        }
+
+        .box input[type="text"] {
+            padding: 5px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .botão-dias {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .botão-dias button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-logo">
+            <div class="logo-imagem"></div>
+            <div class="logo-texto">
+                <ul>
+                    <li>
+                        <a href="página-inicial.html">
+                            <h3>___</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="página-inicial.html">
+                            <h3>___</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="página-inicial.html">
+                            <h3>___</h3>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="login.html">Entrar </a> <a href="cadastro.html">| Cadastrar</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="fundo">
+        <h1><b>METAS</b></h1>
+        <br>
+        <br>
+        <div class="box">
+            <h2>Adicionar título</h2>
+            <form>
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>Selecione a frequência de dias</h2>
+            <div class="botão-dias">
+                <button type="submit">Diário</button>
+                <button type="submit">Semanalmente</button>
+                <button type="submit">Mensalmente</button>
+            </div>
+        </div>
+
+        <div class="box">
+            <h2>Objetivo</h2>
+            <form>
+                <label for="goal">Objetivo:</label>
+                <input type="text" id="goal" name="goal">
+            </form>
+        </div>
+
+        <div class="box">
+            <h2>Dias da semana</h2>
+            <div class="botão-dias">
+                <button type="submit">Domingo</button>
+                <button type="submit">Segunda-feira</button>
+                <button type="submit">Terça-feira</button>
+                <button type="submit">Quarta-feira</button>
+                <button type="submit">Quinta-feira</button>
+                <button type="submit">Sexta-feira</button>
+                <button type="submit">Sábado</button>
+            </div>
+        </div>
+
+        <button type="submit">Salvar</button>
+        <button type="button">Adicionar metas</button>
+    </div>
+</body>
+
+</html>
